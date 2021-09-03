@@ -23,7 +23,7 @@ const submitPage = () => (
         <h1 className="mt-4">  Financial Solutions </h1>
             <p className="lead"> Just answer a questionnaire and a business plan will be generated for your startup.</p>
             <p className="lead">
-
+            <Link className="btn btn-lg btn-secondary" to="/">Back to Landing page</Link>
             </p>
             </main>
         </Col>

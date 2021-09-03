@@ -1,10 +1,13 @@
 import React , {Fragment } from 'react';
 import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Layout from './Components/Layout/Layout';
 import LandingPage from './Components/Pages/LandingPage/LandingPage';
 import SubmitPage from './Components/Pages/SubmitPage/SubmitPage';
+import SectionOne from './Components/Pages/Questions/SectionOne';
 import Answers from './Components/Pages/Answers/Answers';
+import SectionTwo from './Components/Pages/Questions/SectionTwo';
 
 
 function App() {
@@ -12,12 +15,34 @@ function App() {
 
 <Fragment>
  <Layout>
+    <BrowserRouter>
+      <Switch>
 
-<LandingPage/>
-<Answers/>
-{/* <SubmitPage/> */}
 
-</Layout>
+          <Route exact path="/" >
+              <LandingPage/> 
+          </Route>
+  
+          <Route path="/sectionOne">
+            <SectionOne />
+          </Route>
+
+          <Route path="/sectionTwo">
+            <SectionTwo/>
+          </Route>
+
+          <Route path="/checkAnswers">
+             <Answers/>
+          </Route>
+
+          <Route path="/Submited">
+            <SubmitPage/>
+          </Route>
+
+
+      </Switch>
+     </BrowserRouter>
+    </Layout>
 </Fragment>
 
   );
