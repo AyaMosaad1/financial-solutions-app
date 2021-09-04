@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Container , Alert , Row , Col } from 'react-bootstrap';
 import {  Link  } from 'react-router-dom';
 
-const submitPage = () => (
+const submitPage = (props) => (
 <Fragment>
 <Container>
 
@@ -11,7 +11,7 @@ const submitPage = () => (
         <Alert variant="success text-center mt-4">
             <Alert.Heading> Hey, nice to use it </Alert.Heading>
             <p>
-            “ your answers are submitted successfully ”
+            {props.message}
             </p>
             </Alert>
         </Col>

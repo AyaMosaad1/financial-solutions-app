@@ -17,7 +17,7 @@ const [ questionContext , setquestionContext ] = useState('');
     };
 
     return (
-        <QuestionContext.Provider value ={{ questionContext  , answerQuestion }}>
+        <QuestionContext.Provider value = {{ questionContext  , answerQuestion }}>
             {props.children}
         </QuestionContext.Provider>
     )

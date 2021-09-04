@@ -1,12 +1,13 @@
-import React, { useContext  , useCallback } from 'react';
+import React, { useContext  , useCallback ,useState} from 'react';
 import { QuestionContext  } from './../../../context/questionContext';
 import { Container , Card  } from 'react-bootstrap';
-import {  Link ,useHistory  } from 'react-router-dom';
+import {  Link  } from 'react-router-dom';
+import SubmitPage from '../SubmitPage/SubmitPage';
 
 function Answers() {
 const { questionContext } = useContext(QuestionContext);
 
-let history = useHistory();
+const [MessgaeRes , setMessgaeRes] = useState(null)
 
 const handleFormSubmit = useCallback(
     (event) => {
@@ -18,19 +19,27 @@ const handleFormSubmit = useCallback(
         }),
       })
         .then((res) => res.json())
-        .then ( history.push("/submited"))
+        .then(setMessgaeRes)
     },
     [questionContext]
   )
 
 
+  if (MessgaeRes) {
+    return (
+      <div>
+      <SubmitPage message={MessgaeRes.message}/>
+      </div>
+    )
+  }
+
 return questionContext.length > 1 ? (
     <div>
             <Container>
-                  <h2 className = "text-center mt-3">  Just check your answers before submitting   </h2>
+                  <h2 className = "text-center mt-3">  Just check your answers before submitting. </h2>
      {   
-     questionContext.map((answer)=>
-            <Card className = "mt-2" key={answer}>
+     questionContext.map((answer , index)=>
+            <Card className = "mt-2"  key={index}>
                           <Card.Body>
                               <blockquote className="blockquote mb-0">
                               <p>

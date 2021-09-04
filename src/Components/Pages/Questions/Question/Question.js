@@ -2,7 +2,7 @@ import React , {useState} from 'react';
 import { Container , Row , Col , Card , Button , Form } from 'react-bootstrap';
 
 export default function Question(props){
-    const [number, setNumber] = useState();
+    const [number, setNumber] = useState("");
 
     const handleNumber= (e) => {
       e.preventDefault();
@@ -18,9 +18,9 @@ export default function Question(props){
             <Card.Header as="h3" className="p-4 text-weight-bold"> {props.question} </Card.Header>
             <Card.Body>                
                         { 
-                            props.answers.map((answer , key )=>
+                            props.answers.map((answer)=>
                             <Button 
-                            key={key}
+                            key={answer}
                             variant="outline-secondary font-weight-bold mx-4"
                             value ={answer} onClick = {() =>  props.callBack( props.question , answer )}> 
                             <strong> {answer} </strong> </Button>

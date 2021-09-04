@@ -1,12 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Container , Row , Col  } from 'react-bootstrap';
 import {  Link  } from 'react-router-dom';
 
 const landingPage = () => (
-    <Fragment>
-            <Container>
-            <Row>
-
+    <Container>
+        <Row>
             <Col>
                 <main className="text-center mt-8">
                     <h1 className="mt-4"> Financial Solutions </h1>
@@ -16,9 +14,7 @@ const landingPage = () => (
                     </p>
                 </main>
             </Col>
-            </Row>
-            </Container>
-    </Fragment>
+        </Row>
+    </Container>
 );
-
 export default landingPage;
