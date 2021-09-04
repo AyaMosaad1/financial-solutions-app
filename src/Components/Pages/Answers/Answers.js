@@ -1,28 +1,37 @@
 import React, { useContext  , useCallback } from 'react';
+import { QuestionContext  } from '../../../context/questionContext';
 import { Container , Card  } from 'react-bootstrap';
 import {  Link ,useHistory  } from 'react-router-dom';
 
 function Answers() {
+const { questionContext } = useContext(QuestionContext);
 
-return  (
+
+return questionContext.length > 1 ? (
     <div>
             <Container>
-    <h2 className = "text-center mt-3">  Just check your answers before submitting  </h2> 
+                  <h2 className = "text-center mt-2">  Just check your answers before submitting   </h2>
+     {   
+     questionContext.map((answer)=>
         <div>
             <Card className = "mt-4">
                           <Card.Body>
                               <blockquote className="blockquote mb-0">
                               <p>
-                              question
+                              {answer.question}
                               </p>
                               <footer className="blockquote-footer">
-                              answer
+                              {answer.answer}
                               </footer>
                               </blockquote>
                          </Card.Body>
             </Card>
         </div>
-        <Link 
+
+                 )}
+
+
+            <Link 
             className="btn btn-lg btn-secondary mt-4 nextBtn mb-3" 
             to="/submited"
             > Submit </Link>
@@ -30,8 +39,25 @@ return  (
         </div>
 
 )
+:
+(
+    <div>
+        <Container>
+        <Card className = "mt-4">
+                          <Card.Body>
+                              <blockquote className="blockquote mb-0">
+                                  <p className="lead text-center">
+                              <strong >     
+                                 No answers yet! , Just go Back and answer the questions.
+                              </strong>
+                              </p>
+                              </blockquote>
+                         </Card.Body>
+            </Card>
+        </Container>
+
+    </div>
+)
 };
 
 export default Answers;
-
-

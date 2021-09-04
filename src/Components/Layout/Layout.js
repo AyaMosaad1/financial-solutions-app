@@ -18,7 +18,8 @@ const layout = ( props ) => (
         </main>
 
         <Card className = "fixed-bottom text-center" variant="light" bg="light">
-            <Card.Body> Xpovi © 2021 Copyright. </Card.Body>
+        <Card.Header>Xpovi © 2021 Copyright. </Card.Header>
+            
         </Card>
     </Fragment>
 );

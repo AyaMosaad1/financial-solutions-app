@@ -8,6 +8,8 @@ import SubmitPage from './Components/Pages/SubmitPage/SubmitPage';
 import SectionOne from './Components/Pages/Questions/SectionOne';
 import Answers from './Components/Pages/Answers/Answers';
 import SectionTwo from './Components/Pages/Questions/SectionTwo';
+import BookContextProvider from './context/questionContext';
+
 
 
 function App() {
@@ -17,7 +19,7 @@ function App() {
  <Layout>
     <BrowserRouter>
       <Switch>
-
+        <BookContextProvider>
 
           <Route exact path="/" >
               <LandingPage/> 
@@ -39,6 +41,7 @@ function App() {
             <SubmitPage/>
           </Route>
 
+        </BookContextProvider>
 
       </Switch>
      </BrowserRouter>
