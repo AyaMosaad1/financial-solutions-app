@@ -18,13 +18,13 @@ export default function Question(props){
             <Card.Header as="h3" className="p-4 text-weight-bold"> {props.question} </Card.Header>
             <Card.Body>                
                         { 
-                            props.answers.map((answer)=>
+                            props.answers.map((answer , key )=>
                             <Button 
-                            key="{answer}"
+                            key={key}
                             variant="outline-secondary font-weight-bold mx-4"
-                            value ={answer} onClick = {() =>  props.callBack( props.question , answer ) }
-                            > <strong> {answer} </strong> </Button> )
-                        }
+                            value ={answer} onClick = {() =>  props.callBack( props.question , answer )}> 
+                            <strong> {answer} </strong> </Button>
+                            )}
 
                         {
                             props.withInput === "yes" && props.answer === "yes" ? 
@@ -33,7 +33,7 @@ export default function Question(props){
                               placeholder={props.placeholder}
                                className="text-center"
                                value={number} 
-                               onChange={(e) =>  { handleNumber(e); props.callBack( props.question , e.target.value ) ; console.log(number)} }
+                               onChange={(e) =>  { handleNumber(e); props.callBack( props.question , e.target.value ) }}
                             />  : null
                         }
 

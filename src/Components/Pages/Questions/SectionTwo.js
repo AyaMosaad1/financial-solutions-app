@@ -32,9 +32,10 @@ return(
     <Card className="mt-4 text-center">
         <Card.Header as="h3" className="p-4"> {sectionTwo[0].question} </Card.Header>
         <Card.Body>                
-        {  sectionTwo[0].answers.map((answer)=>
+        {  
+        sectionTwo[0].answers.map((answer)=>
                 <Button
-                key="{answer}"
+                key={answer}
                 variant="outline-secondary mx-4" 
                 value ={answer}
                 onClick = {(e) =>{ setstate(answer) ;  

@@ -10,7 +10,7 @@ const layout = ( props ) => (
     <Fragment>
         <Navbar expand="lg" variant="light" bg="light">
         <Container>
-            <Navbar.Brand>Xpovi</Navbar.Brand>
+            <Navbar.Brand as="h3">Xpovi</Navbar.Brand>
         </Container>
         </Navbar>
         <main className={classes.Content}>
@@ -18,8 +18,7 @@ const layout = ( props ) => (
         </main>
 
         <Card className = "fixed-bottom text-center" variant="light" bg="light">
-        <Card.Header>Xpovi © 2021 Copyright. </Card.Header>
-            
+        <Card.Header as="h5" className="pt-3">Xpovi © 2021 Copyright. </Card.Header>
         </Card>
     </Fragment>
 );

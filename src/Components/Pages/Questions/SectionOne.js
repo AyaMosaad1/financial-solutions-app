@@ -35,7 +35,7 @@ return(
          { sectionOne[0].answers.map((answer)=>
                   <Button 
                   variant="outline-secondary mx-4" 
-                  key="{answer}"
+                  key={answer}
                   value ={answer}
                    onClick = {(e) =>{ setstate(answer) ;  
                                      callBackSubmit(sectionOne[0].question, answer );

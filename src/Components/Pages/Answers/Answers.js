@@ -10,11 +10,10 @@ const { questionContext } = useContext(QuestionContext);
 return questionContext.length > 1 ? (
     <div>
             <Container>
-                  <h2 className = "text-center mt-2">  Just check your answers before submitting   </h2>
+                  <h2 className = "text-center mt-2">  Just check your answers before submitting.</h2>
      {   
      questionContext.map((answer)=>
-        <div>
-            <Card className = "mt-4">
+            <Card className = "mt-4"  key={answer} >
                           <Card.Body>
                               <blockquote className="blockquote mb-0">
                               <p>
@@ -25,10 +24,8 @@ return questionContext.length > 1 ? (
                               </footer>
                               </blockquote>
                          </Card.Body>
-            </Card>
-        </div>
-
-                 )}
+            </Card> 
+             )}
 
 
             <Link 
