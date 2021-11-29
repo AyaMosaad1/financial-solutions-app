@@ -2,7 +2,31 @@
   margin-left: 90% !important;
 }
 
-/* 
+/*
 .body {
   background: #553055;
 } */
+
+.btn-primary {
+    color: black !important;
+    background-color: var(--blue) !important;
+    border-color:  var(--blue) !important;
+}
+
+:root {
+  --blue: #6495ed;
+  --white: #faf0e6;
+}
+
+body { background-color: var(--blue); }
+
+
+.name{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.row {
+  --bs-gutter-x: 0 !important;
+  --bs-gutter-y: 0 !important;
+}

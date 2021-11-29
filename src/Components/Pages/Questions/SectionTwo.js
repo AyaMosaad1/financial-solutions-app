@@ -2,7 +2,7 @@ import React , {useState , useContext } from 'react';
 import { Container , Row , Col , Card , Button } from 'react-bootstrap';
 import {  Link  } from 'react-router-dom';
 import   Question from './Question/Question';
-import { QuestionContext  } from '../../../context/questionContext';
+import { QuestionContext  } from '../../../context/QuestionContext';
 
 
 var sectionTwo = [
@@ -31,14 +31,14 @@ return(
     <Col>
     <Card className="mt-4 text-center">
         <Card.Header as="h3" className="p-4"> {sectionTwo[0].question} </Card.Header>
-        <Card.Body>                
-        {  
+        <Card.Body>
+        {
         sectionTwo[0].answers.map((answer)=>
                 <Button
                 key={answer}
-                variant="outline-secondary mx-4" 
+                variant="outline-secondary mx-4"
                 value ={answer}
-                onClick = {(e) =>{ setstate(answer) ;  
+                onClick = {(e) =>{ setstate(answer) ;
                                    callBackSubmit(sectionTwo[0].question, answer );
                                     setAnswer(e.target.value) ;}}
                 > <strong> {answer} </strong> </Button>
@@ -48,22 +48,22 @@ return(
     </Col>
     </Row>
 
- {state === 'yes' ? 
+ {state === 'yes' ?
 
- ( 
-   <Question 
-    question ={sectionTwo[1].question} 
-    answers = {sectionTwo[1].answers} 
-    withInput ="yes" answer="yes" 
-    placeholder ="only positive numbers" 
-    callBack = { callBackSubmit }/>  
+ (
+   <Question
+    question ={sectionTwo[1].question}
+    answers = {sectionTwo[1].answers}
+    withInput ="yes" answer="yes"
+    placeholder ="only positive numbers"
+    callBack = { callBackSubmit }/>
     )
 
 :  <Question question ={sectionTwo[1].question} answers = {sectionTwo[1].answers} withInput ="yes" answer="no" placeholder ="only positive numbers" />
  }
 
-        <Link 
-        className="btn btn-lg btn-secondary mt-4 nextBtn mb-3" 
+        <Link
+        className="btn btn-lg btn-secondary mt-4 nextBtn mb-3"
         to="/checkAnswers" >
             next
         </Link>

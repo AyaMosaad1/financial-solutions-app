@@ -1,5 +1,5 @@
 import React, { useContext  , useCallback ,useState} from 'react';
-import { QuestionContext  } from './../../../context/questionContext';
+import { QuestionContext  } from './../../../context/QuestionContext';
 import { Container , Card  } from 'react-bootstrap';
 import {  Link  } from 'react-router-dom';
 import SubmitPage from '../SubmitPage/SubmitPage';
@@ -37,7 +37,7 @@ return questionContext.length > 1 ? (
     <div>
             <Container>
                   <h2 className = "text-center mt-3">  Just check your answers before submitting. </h2>
-     {   
+     {
      questionContext.map((answer , index)=>
             <Card className = "mt-2"  key={index}>
                           <Card.Body>
@@ -55,10 +55,10 @@ return questionContext.length > 1 ? (
                  )}
 
 
-            <Link 
-            className="btn btn-lg btn-secondary mt-4 nextBtn mb-3" 
+            <Link
+            className="btn btn-lg btn-secondary mt-4 nextBtn mb-3"
             to="/submited"
-            onClick = { handleFormSubmit } 
+            onClick = { handleFormSubmit }
             > Submit </Link>
         </Container>
         </div>
@@ -72,7 +72,7 @@ return questionContext.length > 1 ? (
                           <Card.Body>
                               <blockquote className="blockquote mb-0">
                                   <p className="lead text-center">
-                              <strong >     
+                              <strong >
                                  No answers yet! , Just go Back and answer the questions.
                               </strong>
                               </p>
@@ -86,5 +86,3 @@ return questionContext.length > 1 ? (
 };
 
 export default Answers;
-
-

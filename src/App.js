@@ -8,23 +8,24 @@ import SubmitPage from './Components/Pages/SubmitPage/SubmitPage';
 import SectionOne from './Components/Pages/Questions/SectionOne';
 import Answers from './Components/Pages/Answers/Answers';
 import SectionTwo from './Components/Pages/Questions/SectionTwo';
-import BookContextProvider from './context/questionContext';
+import BookContextProvider from './context/QuestionContext';
+import { Col , Row , Form , Button , Image , Container} from 'react-bootstrap';
 
-
-
+import logo from './download.png';
+import friends from './friends.jpg'
 function App() {
   return (
 
 <Fragment>
- <Layout>
-    <BrowserRouter>
+ {/* <Layout> */}
+    {/* <BrowserRouter>
       <Switch>
         <BookContextProvider>
 
           <Route exact path="/" >
-              <LandingPage/> 
+              <LandingPage/>
           </Route>
-  
+
           <Route path="/sectionOne">
             <SectionOne />
           </Route>
@@ -44,8 +45,21 @@ function App() {
         </BookContextProvider>
 
       </Switch>
-     </BrowserRouter>
-    </Layout>
+     </BrowserRouter> */}
+
+  <Row className="row">
+          <Col className="name">
+          {/* <Image src={logo } /> */}
+          </Col>
+
+          <Col  className="name">
+          <img src={friends } style ={{ height: '800px' , width: '900px'}} />
+          </Col>
+
+
+  </Row>
+
+    {/* </Layout> */}
 </Fragment>
 
   );

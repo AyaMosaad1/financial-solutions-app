@@ -2,7 +2,7 @@ import React , {useState , useContext } from 'react';
 import { Container , Row , Col , Card , Button } from 'react-bootstrap';
 import {  Link  } from 'react-router-dom';
 import Question from './Question/Question';
-import { QuestionContext  } from '../../../context/questionContext';
+import { QuestionContext  } from '../../../context/QuestionContext';
 
 var sectionOne = [
     {id: '1' ,  question: '1. Is your business model B2C or B2B or both?', answers: ['B2C' , 'B2B' , 'both']},
@@ -31,17 +31,17 @@ return(
       <Col>
       <Card className="mt-4 text-center">
          <Card.Header as="h3" className="p-4"> { sectionOne[0].question} </Card.Header>
-         <Card.Body>                
+         <Card.Body>
          { sectionOne[0].answers.map((answer)=>
-                  <Button 
-                  variant="outline-secondary mx-4" 
+                  <Button
+                  variant="outline-secondary mx-4"
                   key={answer}
                   value ={answer}
-                   onClick = {(e) =>{ setstate(answer) ;  
+                   onClick = {(e) =>{ setstate(answer) ;
                                      callBackSubmit(sectionOne[0].question, answer );
-                                       setAnswer(e.target.value) ;}}> 
+                                       setAnswer(e.target.value) ;}}>
                    <strong> {answer} </strong> </Button>
-                  
+
                  )}
       </Card.Body>
       </Card>

@@ -16,31 +16,31 @@ export default function Question(props){
         <Col>
             <Card className="mt-2 text-center">
             <Card.Header as="h3" className="p-4 text-weight-bold"> {props.question} </Card.Header>
-            <Card.Body>                
-                        { 
+            <Card.Body>
+                        {
                             props.answers.map((answer)=>
-                            <Button 
+                            <Button
                             key={answer}
                             variant="outline-secondary font-weight-bold mx-4"
-                            value ={answer} onClick = {() =>  props.callBack( props.question , answer )}> 
+                            value ={answer} onClick = {() =>  props.callBack( props.question , answer )}>
                             <strong> {answer} </strong> </Button>
                             )}
 
                         {
-                            props.withInput === "yes" && props.answer === "yes" ? 
+                            props.withInput === "yes" && props.answer === "yes" ?
                             <Form.Control
-                             size="lg" type="text"
+                             size="sm" type="text"
                               placeholder={props.placeholder}
                                className="text-center"
-                               value={number} 
+                               value={number}
                                onChange={(e) =>  { handleNumber(e); props.callBack( props.question , e.target.value ) }}
                             />  : null
                         }
 
-                        
+
                         {
-                            props.withInput === "yes" 
-                            && props.answer === "no" ? 
+                            props.withInput === "yes"
+                            && props.answer === "no" ?
                             <Form.Control size="lg" type="text" placeholder={props.placeholder} className="text-center" disabled /> : null
                         }
 
@@ -49,7 +49,6 @@ export default function Question(props){
             </Col>
             </Row>
      </Container>
- 
+
 )
 };
-
